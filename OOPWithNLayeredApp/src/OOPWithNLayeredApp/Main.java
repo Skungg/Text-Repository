@@ -1,19 +1,19 @@
-package OOPWithNLayeredApp;
+package oopWithNLayeredApp;
 
-import OOPWithNLayeredApp.business.ProductManager;
-import OOPWithNLayeredApp.core.logging.DatabaseLogger;
-import OOPWithNLayeredApp.core.logging.FileLogger;
-import OOPWithNLayeredApp.core.logging.Logger;
-import OOPWithNLayeredApp.core.logging.MailLogger;
-import OOPWithNLayeredApp.dataAccess.HibernateProductDao;
-import OOPWithNLayeredApp.dataAccess.JdbcProductDao;
-import OOPWithNLayeredApp.entities.Product;
+import oopWithNLayeredApp.business.ProductManager;
+import oopWithNLayeredApp.core.logging.DatabaseLogger;
+import oopWithNLayeredApp.core.logging.FileLogger;
+import oopWithNLayeredApp.core.logging.Logger;
+import oopWithNLayeredApp.core.logging.MailLogger;
+import oopWithNLayeredApp.dataAccess.HibernateProductDao;
+import oopWithNLayeredApp.dataAccess.JdbcProductDao;
+import oopWithNLayeredApp.entities.Product;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Product product1 = new Product(1,"IPhone XR",10000);
 
-        Logger[] loggers = {new DatabaseLogger(), new FileLogger(),new MailLogger()};
+        Logger[] loggers = {new DatabaseLogger(),new FileLogger(),new MailLogger()};
 
         ProductManager productManager = new ProductManager(new HibernateProductDao(),loggers);
         productManager.add(product1);

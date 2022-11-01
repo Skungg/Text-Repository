@@ -1,10 +1,12 @@
-package OOPWithNLayeredApp.business;
+package oopWithNLayeredApp.business;
 
-import OOPWithNLayeredApp.core.logging.Logger;
-import OOPWithNLayeredApp.dataAccess.HibernateProductDao;
-import OOPWithNLayeredApp.dataAccess.JdbcProductDao;
-import OOPWithNLayeredApp.dataAccess.ProductDao;
-import OOPWithNLayeredApp.entities.Product;
+import oopWithNLayeredApp.core.logging.Logger;
+import oopWithNLayeredApp.dataAccess.HibernateProductDao;
+import oopWithNLayeredApp.dataAccess.JdbcProductDao;
+import oopWithNLayeredApp.dataAccess.ProductDao;
+import oopWithNLayeredApp.entities.Product;
+
+import java.util.List;
 
 public class ProductManager {
     private ProductDao productDao;
@@ -15,13 +17,13 @@ public class ProductManager {
     }
 
     public void add(Product product) throws Exception {
-        //İş kuralları
+        //iş kuralları
         if(product.getUnitePrice()<10){
-            throw new Exception("Ürün fiyatı 10 dan düşük olamaz");
+            throw new Exception("Ürün fiyatı 10'dan küçük olamaz");
         }
         productDao.add(product);
 
-        for(Logger logger : loggers){
+        for (Logger logger : loggers){
             logger.log(product.getName());
         }
     }

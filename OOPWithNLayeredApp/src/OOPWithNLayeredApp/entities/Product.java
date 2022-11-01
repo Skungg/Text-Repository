@@ -1,15 +1,15 @@
-package OOPWithNLayeredApp.entities;
+package oopWithNLayeredApp.entities;
 
 public class Product {
     private int id;
     private String name;
-    private int unitePrice;
+    private double unitePrice;
 
     public Product() {
 
     }
 
-    public Product(int id, String name, int unitePrice) {
+    public Product(int id, String name, double unitePrice) {
         this.id = id;
         this.name = name;
         this.unitePrice = unitePrice;
@@ -31,11 +31,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getUnitePrice() {
+    public double getUnitePrice() {
         return unitePrice;
     }
 
-    public void setUnitePrice(int unitePrice) {
+    public void setUnitePrice(double unitePrice) {
         this.unitePrice = unitePrice;
     }
 }

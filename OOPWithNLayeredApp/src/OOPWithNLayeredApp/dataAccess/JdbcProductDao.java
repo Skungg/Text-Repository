@@ -1,10 +1,10 @@
-package OOPWithNLayeredApp.dataAccess;
+package oopWithNLayeredApp.dataAccess;
 
-import OOPWithNLayeredApp.entities.Product;
+import oopWithNLayeredApp.entities.Product;
 
-public class JdbcProductDao implements ProductDao {
+public class JdbcProductDao implements ProductDao{
     public void add(Product product){
-        //Sadece ve sadece db erişim kodları buraya yazılır... SQL
-        System.out.println("JDBC ile veritabanina eklendi");
+        //sadece ve sadece db erişim kodları buraya yazılır...SQL
+        System.out.println("JDBC ile veritabanına eklendi");
     }
 }
